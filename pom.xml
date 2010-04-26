@@ -25,6 +25,12 @@
     </license>
   </licenses>
 
+  <scm>
+    <connection>scm:svn:http://wikbook.googlecode.com/svn/trunk/</connection>
+    <developerConnection>scm:svn:https://wikbook.googlecode.com/svn/trunk/</developerConnection>
+    <url>http://code.google.com/p/wikbook/source/browse/</url>
+  </scm>
+
   <distributionManagement>
     <repository>
       <id>repository.exoplatform.org</id>
@@ -53,6 +59,10 @@
     <wikbook.version>${project.version}</wikbook.version>
     <wikbook.releases.repo.url>http://repository.exoplatform.org/content/repositories/wikbook-releases/</wikbook.releases.repo.url>
     <wikbook.snapshots.repo.url>http://repository.exoplatform.org/content/repositories/wikbook-snapshots/</wikbook.snapshots.repo.url>
+
+    <!-- maven-release-plugin -->
+    <useReleaseProfile>false</useReleaseProfile>
+    <autoVersionSubmodules>true</autoVersionSubmodules>
   </properties>
 
   <modules>
