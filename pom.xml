@@ -5,7 +5,7 @@
   <groupId>org.wikbook</groupId>
   <artifactId>wikbook.parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.9.6</version>
+  <version>0.9.7-SNAPSHOT</version>
 
   <name>Wikbook parent</name>
   <description>The Wikbook project</description>
@@ -24,9 +24,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:svn:http://wikbook.googlecode.com/svn/tags/0.9.6</connection>
-    <developerConnection>scm:svn:https://wikbook.googlecode.com/svn/tags/0.9.6</developerConnection>
-    <url>http://code.google.com/p/wikbook/source/browse/tags/0.9.6</url>
+    <connection>scm:svn:http://wikbook.googlecode.com/svn/trunk/</connection>
+    <developerConnection>scm:svn:https://wikbook.googlecode.com/svn/trunk/</developerConnection>
+    <url>http://code.google.com/p/wikbook/source/browse/</url>
   </scm>
 
   <distributionManagement>
@@ -68,22 +68,22 @@
       <dependency>
         <groupId>org.wikbook</groupId>
         <artifactId>wikbook.codesource</artifactId>
-        <version>0.9.6</version>
+        <version>0.9.7-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.wikbook</groupId>
         <artifactId>wikbook.core</artifactId>
-        <version>0.9.6</version>
+        <version>0.9.7-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.wikbook</groupId>
         <artifactId>wikbook.maven</artifactId>
-        <version>0.9.6</version>
+        <version>0.9.7-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.wikbook</groupId>
         <artifactId>wikbook.doc</artifactId>
-        <version>0.9.6</version>
+        <version>0.9.7-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
