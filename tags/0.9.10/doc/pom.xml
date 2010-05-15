@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>wikbook.docbkx</artifactId>
+    <groupId>org.wikbook</groupId>
+    <version>0.9.10</version>
+  </parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>wikbook.doc</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Wikbook documentation</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+     <plugins>
+
+        <!-- Generate the docbook document -->
+        <plugin>
+          <groupId>org.wikbook</groupId>
+          <artifactId>wikbook.maven</artifactId>
+        </plugin>
+
+        <!-- Unpack resources -->
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-dependency-plugin</artifactId>
+       </plugin>
+
+        <!-- Copy the image for the PDF generation -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+        </plugin>
+
+       <!-- -->
+       <plugin>
+         <groupId>com.agilejava.docbkx</groupId>
+         <artifactId>docbkx-maven-plugin</artifactId>
+       </plugin>
+
+     </plugins>
+   </build>
+
+</project>
+    
