@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>wikbook.parent</artifactId>
+    <groupId>org.wikbook</groupId>
+    <version>0.9.15</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>wikbook.codesource</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Wikbook code source plugin</name>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.google.code.javaparser</groupId>
+      <artifactId>javaparser</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.cojen</groupId>
+      <artifactId>cojen</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/java</directory>
+      </testResource>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
+  </build>
+
+</project>
