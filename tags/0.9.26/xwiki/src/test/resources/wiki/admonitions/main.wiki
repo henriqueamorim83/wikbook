@@ -1,0 +1,13 @@
+{{note}}note_value{{/note}}
+
+{{info}}info_value{{/info}}
+
+{{important}}important_value{{/important}}
+
+{{tip}}tip_value{{/tip}}
+
+{{caution}}caution_value{{/caution}}
+
+{{warning}}warning_value{{/warning}}
+
+
