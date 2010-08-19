@@ -1,0 +1,438 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Wikbook</title><link rel="stylesheet" href="css/html.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Wikbook</h1></div><div><h2 class="subtitle">Wikbook Reference Guide</h2></div><div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="authorgroup"><h2>Authors</h2><p></p><span class="author"><span class="firstname">Julien</span> <span class="surname">Viet</span> 
+            (eXo Platform)
+            </span></div></div><div><p class="copyright">Copyright &copy; 2010 eXo Platform SAS</p></div></div><hr></div><div class="toc"><dl><dt><span class="preface"><a href="#d0e34">Preface</a></span></dt><dt><span class="chapter"><a href="#d0e58">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e61">1.1. Document syntax</a></span></dt><dt><span class="section"><a href="#d0e107">1.2. Wiki macros</a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e114">2. How-to</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e119">2.1. Document structure</a></span></dt><dt><span class="section"><a href="#d0e155">2.2. Document content</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e160">2.2.1. Rich text</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e163">2.2.1.1. Emphasis</a></span></dt><dt><span class="section"><a href="#d0e239">2.2.1.2. Links</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e289">2.2.2. Verbatim text</a></span></dt><dt><span class="section"><a href="#d0e314">2.2.3. Blocks</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e317">2.2.3.1. Paragraphs</a></span></dt><dt><span class="section"><a href="#d0e342">2.2.3.2. Lists</a></span></dt><dt><span class="section"><a href="#d0e465">2.2.3.3. Tables</a></span></dt><dt><span class="section"><a href="#group_section">2.2.3.4. Groups </a></span></dt><dt><span class="section"><a href="#d0e646">2.2.3.5. Images</a></span></dt><dt><span class="section"><a href="#d0e742">2.2.3.6. Admonitions</a></span></dt><dt><span class="section"><a href="#d0e805">2.2.3.7. Special blocks</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e1277">2.2.4. Definition list</a></span></dt><dt><span class="section"><a href="#d0e1339">2.2.5. Example</a></span></dt><dt><span class="section"><a href="#d0e1411">2.2.6. Quotation</a></span></dt><dt><span class="section"><a href="#d0e1442">2.2.7. Modularization</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d0e1463">3. Project integration</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e1468">3.1. Java<sup>tm</sup> code embedding</a></span></dt><dt><span class="section"><a href="#d0e1481">3.2. Maven integration</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e1486">3.2.1. The Maven Wikbook plugin</a></span></dt><dt><span class="section"><a href="#d0e1501">3.2.2. The Maven transformation plugins</a></span></dt><dt><span class="section"><a href="#d0e1521">3.2.3. The Maven Wikbook archetype</a></span></dt><dt><span class="section"><a href="#maven_code_citation_section">3.2.4. Integration of code block citation </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e1545">3.2.4.1. Producing the source dependencies</a></span></dt><dt><span class="section"><a href="#d0e1563">3.2.4.2. Declaring the right dependency</a></span></dt></dl></dd></dl></dd></dl></dd></dl></div><div class="preface" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e34"></a>Preface</h2></div></div></div><p>Wikbook is a set of tools for efficiently writing docbook documentation. For this purpose several choices have been made that are explained below</p><div class="itemizedlist"><ul type="disc"><li><p>The Docbook system can produce high quality documents with different outputs.</p></li><li><p>Documentation written in wiki language is a good trade off between document richness and simplicity</p></li></ul></div><p>Wikbook aims also to provide exclusive features that makes documentation easier to write. The perfect example we like  to give is the inclusion of Java<sup>tm</sup> source code at the heart of the documentation as it allows to have always up to  date example that stay in sync with the documentation. The goal is to make the documentation easier to write and maintain.</p><p>Wikbook is also a lab to experiment new things and we are sure that it will get richer over time. We hope that people will find Wikbook interesting to write their documentation, experiment new ideas and contribute them.</p><p>Wikbook aims to be open and does not want to lock users into a proprietary system. The proof is that Wikbook is based on the open Docbook format.</p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>This document is a work in progress and will get richer over time.</p></td></tr></table></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e58"></a>Chapter&nbsp;1.&nbsp;Introduction</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e61"></a>1.1.&nbsp;Document syntax</h2></div></div></div><p>Wiki syntaxes are not unique, Wikbook relies on an external framework used at the hear of XWiki that is able to make wiki syntaxes coexist. Any wiki syntax recognized by this framework can be used for documentation writing. The following syntaxes are recognized:</p><div class="itemizedlist"><ul type="disc"><li><p>
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://platform.xwiki.org/xwiki/bin/view/Main/XWikiSyntax" target="_top">XWiki 1.0 and 2.0</a>
+          </p></li><li><p>
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.wikicreole.org/wiki/Creole1.0" target="_top">Creole</a>
+          </p></li><li><p>
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jspwiki.org/wiki/TextFormattingRules" target="_top">JSP Wiki</a>
+          </p></li><li><p>
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://ang.wikipedia.org/wiki/Wikipedia:How_to_edit_a_page#The_wiki_markup" target="_top">Media Wiki</a>
+          </p></li><li><p>
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.atlassian.com/software/confluence/" target="_top">Confluence</a>
+          </p></li><li><p>
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://twiki.org/cgi-bin/view/TWiki/TextFormattingFAQ" target="_top">TWiki</a>
+          </p></li></ul></div><p>For the purpose of simplicity, the Wikbook documentation uses the XWiki 2.0 syntax.</p><p>Wikbook attempts to fully leverage the wiki syntax, however the horizontal rule wiki syntax is not supported. Indeed there is no such concept in the docbook system and horizontal rule are simply ignored.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e107"></a>1.2.&nbsp;Wiki macros</h2></div></div></div><p>A wiki macro is way to complete the wiki syntax. Wiki syntax is usually not enough to express some ideas and a wiki macro provides a way to plug new behavior into a wiki syntax.</p><p>Wikbook makes use of wiki macro to integrate specific docbook features.</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e114"></a>Chapter&nbsp;2.&nbsp;How-to</h2></div></div></div><p>Wiki concepts are naturally mapped onto docbook concepts.</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e119"></a>2.1.&nbsp;Document structure</h2></div></div></div><p>A book is structured into chapters and each chapter is structured into sections. A wiki document provides a syntax for creating nested sections with different levels. The book structure can naturally leverage the wiki document structure with the following rules:</p><div class="itemizedlist"><ul type="disc"><li><p>Top level section correspond to book chapters</p></li><li><p>Other wiki sections correspond to book sections</p></li></ul></div><div class="table"><a name="d0e131"></a><p class="title"><b>Table&nbsp;2.1.&nbsp;</b></p><div class="table-contents"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                <div class="programlistingco"><pre class="programlisting">= Section 1 =
+== Section 2 ==</pre></div>
+              </td><td>
+                <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">chapter</span>&gt;
+  &lt;<span class="hl-tag">title</span>&gt;Section 1&lt;<span class="hl-tag">/title</span>&gt;
+  &lt;<span class="hl-tag">section</span>&gt;
+    &lt;<span class="hl-tag">title</span>&gt;Section 2&lt;<span class="hl-tag">/title</span>&gt;
+  &lt;<span class="hl-tag">/section</span>&gt;
+&lt;<span class="hl-tag">/chapter</span>&gt;
+</pre></div>
+              </td></tr></tbody></table></div></div><br class="table-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>All wiki sections don't have to be explicitely declared, it is possible to <span class="italic">omit</span> the declaration of a section. When it occurs, implicit docbook section will be created with no title.</p></td></tr></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e155"></a>2.2.&nbsp;Document content</h2></div></div></div><p>The content of a book can be seen as a collection of content, each content can be categorized into blocks or rich text. Rich text can either be simple text or it can be made richer, like a word in bold. A block contains usually rich text and gives a meaning to the text, the most natural block is the paragraph.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e160"></a>2.2.1.&nbsp;Rich text</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e163"></a>2.2.1.1.&nbsp;Emphasis</h4></div></div></div><p>The following syntax can be used to put the emphasis for creating richtext</p><div class="table"><a name="d0e168"></a><p class="title"><b>Table&nbsp;2.2.&nbsp;Text emphasis</b></p><div class="table-contents"><table summary="Text emphasis" border="1"><colgroup><col><col></colgroup><tbody><tr><td>**bold**</td><td>
+                    <span class="bold"><strong>bold</strong></span>
+                  </td></tr><tr><td>//italic//</td><td>
+                    <span class="italic">italic</span>
+                  </td></tr><tr><td>__underline__</td><td>
+                    <span class="underline">underline</span>
+                  </td></tr><tr><td>,,subscript,,</td><td>
+                    <sub>subscript</sub>
+                  </td></tr><tr><td>^^upperscript^^</td><td>
+                    <sup>upperscript</sup>
+                  </td></tr><tr><td>--strikethrough--</td><td>
+                    <span class="strikethrough">strikethrough</span>
+                  </td></tr><tr><td>##monospaced##</td><td>
+                    <code class="code">monospaced</code>
+                  </td></tr><tr><td>{{code}}inlineCode(){{/code}}</td><td>
+                    <div class="programlistingco"><pre class="programlisting">inlineCode()</pre></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e239"></a>2.2.1.2.&nbsp;Links</h4></div></div></div><p>We can distinguish two kinds of links. A link can reference a target inside the document such as an anchor or a section or it can reference an URL.</p><p>The anchor macro plays an important role in internal links as it specifies the potential target of a link. Any internal link should reference a valid anchor inside the document. An anchor can be placed anywhere in text but it can also be present in a section title.</p><div class="table"><a name="d0e246"></a><p class="title"><b>Table&nbsp;2.3.&nbsp;Document links</b></p><div class="table-contents"><table summary="Document links" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">= Chapter 1 {{anchor id=chapter_1 /}} =
+A [[link&gt;&gt;#chapter_1]] to the chapter 1
+The [[#chapter_1]] can be linked
+A [[link&gt;&gt;#foo]] to an anchor {{anchor id=foo /}}</pre></div>
+                  </td><td>
+                    <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">chapter</span>&gt;
+  &lt;<span class="hl-tag">title</span>&gt;Chapter 1&lt;<span class="hl-tag">/title</span>&gt;
+  &lt;<span class="hl-tag">para</span>&gt;A&lt;<span class="hl-tag">link</span> <span class="hl-attribute">linkend</span>=<span class="hl-value">"chapter_1"</span>&gt;link&lt;<span class="hl-tag">/link</span>&gt;to the chapter 1&lt;<span class="hl-tag">/para</span>&gt;
+  &lt;<span class="hl-tag">para</span>&gt;The&lt;<span class="hl-tag">xref</span> <span class="hl-attribute">linkend</span>=<span class="hl-value">"chapter_1"</span>/&gt;can be linked&lt;<span class="hl-tag">/para</span>&gt;
+  &lt;<span class="hl-tag">para</span>&gt;A&lt;<span class="hl-tag">link</span> <span class="hl-attribute">linkend</span>=<span class="hl-value">"foo"</span>&gt;link&lt;<span class="hl-tag">/link</span>&gt;to an anchor&lt;<span class="hl-tag">/para</span>&gt;
+&lt;<span class="hl-tag">/chapter</span>&gt;
+</pre></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"><div class="table"><a name="d0e266"></a><p class="title"><b>Table&nbsp;2.4.&nbsp;External links</b></p><div class="table-contents"><table summary="External links" border="1"><colgroup><col></colgroup><tbody><tr><td>The <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.foobar.com" target="_top">http://www.foobar.com</a> site</td></tr><tr><td>The <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.foobar.com" target="_top">FooBar</a> site</td></tr><tr><td>Send a mail to <code class="email">&lt;<a href="mailto:foo@bar.com">foo@bar.com</a>&gt;</code>
+                  </td></tr></tbody></table></div></div><br class="table-break"></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e289"></a>2.2.2.&nbsp;Verbatim text</h3></div></div></div><p>Verbatim escapes the wiki syntax and is useful for citing wiki in a wiki document. It is useful for creating document such as this documentation.</p><div class="table"><a name="d0e294"></a><p class="title"><b>Table&nbsp;2.5.&nbsp;Verbatim text</b></p><div class="table-contents"><table summary="Verbatim text" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                  <div class="programlistingco"><pre class="programlisting">{{{[foo&gt;&gt;#bar]}}}</pre></div>
+                </td><td>
+                  <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">para</span>&gt;[foo&amp;gt;&amp;gt;#bar]&lt;<span class="hl-tag">/para</span>&gt;
+</pre></div>
+                </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e314"></a>2.2.3.&nbsp;Blocks</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e317"></a>2.2.3.1.&nbsp;Paragraphs</h4></div></div></div><p>Unlike docbook, wiki paragraphs are implicitely defined, the general rule is that any text content that does not contain wiki instruction is one paragraph. The wikbook system creates docbook paragraphs when it is required. The simplest example is that any content in a section is a paragraph.</p><div class="table"><a name="d0e322"></a><p class="title"><b>Table&nbsp;2.6.&nbsp;Paragraph generation</b></p><div class="table-contents"><table summary="Paragraph generation" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">= Chapter 1 =
+The paragraph of the chapter 1.
+== Section 1 ==
+The paragraph of the section 1.
+== Section 2 ==
+The first paragraph of the section 2.
+
+The second paragraph of the section 2.</pre></div>
+                  </td><td>
+                    <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">chapter</span>&gt;
+  &lt;<span class="hl-tag">title</span>&gt;Chapter 1&lt;<span class="hl-tag">/title</span>&gt;
+  &lt;<span class="hl-tag">para</span>&gt;The paragraph of the chapter 1.&lt;<span class="hl-tag">/para</span>&gt;
+  &lt;<span class="hl-tag">section</span>&gt;
+    &lt;<span class="hl-tag">title</span>&gt;Section 1&lt;<span class="hl-tag">/title</span>&gt;
+    &lt;<span class="hl-tag">para</span>&gt;The paragraph of the section 1.&lt;<span class="hl-tag">/para</span>&gt;
+  &lt;<span class="hl-tag">/section</span>&gt;
+  &lt;<span class="hl-tag">section</span>&gt;
+    &lt;<span class="hl-tag">title</span>&gt;Section 2&lt;<span class="hl-tag">/title</span>&gt;
+    &lt;<span class="hl-tag">para</span>&gt;The first paragraph of the section 2.&lt;<span class="hl-tag">/para</span>&gt;
+    &lt;<span class="hl-tag">para</span>&gt;The second paragraph of the section 2.&lt;<span class="hl-tag">/para</span>&gt;
+  &lt;<span class="hl-tag">/section</span>&gt;
+&lt;<span class="hl-tag">/chapter</span>&gt;
+</pre></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e342"></a>2.2.3.2.&nbsp;Lists</h4></div></div></div><p>It is easy to create lists in wiki syntax, whereas the docbook XML is very tedious. Several types of lists are possible such as bullet or ordered list.</p><div class="table"><a name="d0e347"></a><p class="title"><b>Table&nbsp;2.7.&nbsp;List examples</b></p><div class="table-contents"><table summary="List examples" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">* item 1
+** item 1.1
+** item 1.2
+* item 2</pre></div>
+                  </td><td>
+                    <div class="itemizedlist"><ul type="disc"><li><p>item 1</p><div class="itemizedlist"><ul type="circle"><li><p>item 1.1</p></li><li><p>item 1.2</p></li></ul></div></li><li><p>item 2</p></li></ul></div>
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">1. item 1
+11. item 1.1
+11. item 1.2
+1. item 2</pre></div>
+                  </td><td>
+                    <div class="orderedlist"><ol type="1"><li><p>item 1</p><div class="orderedlist"><ol type="a"><li><p>item 1.1</p></li><li><p>item 1.2</p></li></ol></div></li><li><p>item 2</p></li></ol></div>
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">(% style="upperroman" %)
+1. item 1
+11. item 1.1
+11. item 1.2
+1. item 2</pre></div>
+                  </td><td>
+                    <div class="orderedlist"><ol type="I"><li><p>item 1</p><div class="orderedlist"><ol type="1"><li><p>item 1.1</p></li><li><p>item 1.2</p></li></ol></div></li><li><p>item 2</p></li></ol></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"><p>It is possible to configure also the list style according to the docbook capabilities.</p><div class="itemizedlist"><ul type="disc"><li><p>Bullet style</p><div class="itemizedlist"><ul type="circle"><li><p>disc</p></li><li><p>circle</p></li><li><p>square</p></li></ul></div></li><li><p>Numbering style</p><div class="itemizedlist"><ul type="circle"><li><p>arabic</p></li><li><p>loweralpha</p></li><li><p>loweroman</p></li><li><p>upperalpha</p></li><li><p>uperroman</p></li><li><p>arabicindic</p></li></ul></div></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e465"></a>2.2.3.3.&nbsp;Tables</h4></div></div></div><p>Tables are mapped to the docbook tables, here are a few examples</p><div class="table"><a name="d0e470"></a><p class="title"><b>Table&nbsp;2.8.&nbsp;Table examples</b></p><div class="table-contents"><table summary="Table examples" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">|1|2|3
+|4|5|6</pre></div>
+                  </td><td>
+                    <div class="table"><a name="d0e485"></a><p class="title"><b>Table&nbsp;2.9.&nbsp;A simple table</b></p><div class="table-contents"><table summary="A simple table" border="1"><colgroup><col><col><col></colgroup><tbody><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></tbody></table></div></div><br class="table-break">
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">|=1|=2|=3
+|4|5|6</pre></div>
+                  </td><td>
+                    <div class="table"><a name="d0e515"></a><p class="title"><b>Table&nbsp;2.10.&nbsp;A table with a row header</b></p><div class="table-contents"><table summary="A table with a row header" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>4</td><td>5</td><td>6</td></tr></tbody></table></div></div><br class="table-break">
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">|1|2|3
+|=4|=5|=6</pre></div>
+                  </td><td>
+                    <div class="table"><a name="d0e546"></a><p class="title"><b>Table&nbsp;2.11.&nbsp;A table with a row footer</b></p><div class="table-contents"><table summary="A table with a row footer" border="1"><colgroup><col><col><col></colgroup><tfoot><tr><th>4</th><th>5</th><th>6</th></tr></tfoot><tbody><tr><td>1</td><td>2</td><td>3</td></tr></tbody></table></div></div><br class="table-break">
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">(% title="The table" %)
+|1|2|3
+|4|5|6</pre></div>
+                  </td><td>
+                    <div class="table"><a name="d0e577"></a><p class="title"><b>Table&nbsp;2.12.&nbsp;The table</b></p><div class="table-contents"><table summary="The table" border="1"><colgroup><col><col><col></colgroup><tbody><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></tbody></table></div></div><br class="table-break">
+                  </td></tr></tbody></table></div></div><br class="table-break"><p>By default a table expects inline content, that means that any content inside the table will not be interpreted as wiki text but as normal text. That behavior can be changed by using the group syntax block explained in the <a href="#group_section" title="2.2.3.4.&nbsp;Groups">Section&nbsp;2.2.3.4, &#8220;Groups &#8221;</a>.</p><p>
+            </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>This document makes an extensive usage of this feature.</p></td></tr></table></div><p> </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/warning.png"></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>Inside a complex content block, the usage of structural elements such as section is not allowed.</p></td></tr></table></div><p>
+          </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="group_section"></a>2.2.3.4.&nbsp;Groups </h4></div></div></div><p>Groups are mostly useful for embedding complex structure inside a table. A grou is declared inside a block like (((...))).</p><div class="table"><a name="d0e616"></a><p class="title"><b>Table&nbsp;2.13.&nbsp;A list inside a table with a group block</b></p><div class="table-contents"><table summary="A list inside a table with a group block" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">|(((
+* item 1
+* item 2
+)))</pre></div>
+                  </td><td>
+                    <div class="table"><a name="d0e631"></a><p class="title"><b>Table&nbsp;2.14.&nbsp;</b></p><div class="table-contents"><table border="1"><colgroup><col></colgroup><tbody><tr><td>
+                              <div class="itemizedlist"><ul type="disc"><li><p>item 1</p></li><li><p>item 2</p></li></ul></div>
+                            </td></tr></tbody></table></div></div><br class="table-break">
+                  </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e646"></a>2.2.3.5.&nbsp;Images</h4></div></div></div><p>Simple images can be displayed by using the image syntax.</p><div class="table"><a name="d0e651"></a><p class="title"><b>Table&nbsp;2.15.&nbsp;Image example</b></p><div class="table-contents"><table summary="Image example" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">[[image:images/controller.png]]</pre></div>
+                  </td></tr><tr><td>
+                    <p>
+                      <span class="inlinemediaobject"><img src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/src/main/wikbook/images/controller.png"></span>
+                    </p>
+                  </td></tr></tbody></table></div></div><br class="table-break"><p>Images can naturally be inlined when some text is around the image.</p><div class="table"><a name="d0e678"></a><p class="title"><b>Table&nbsp;2.16.&nbsp;Image example</b></p><div class="table-contents"><table summary="Image example" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">An inline [[image:images/smallcontroller.png]] image</pre></div>
+                  </td></tr><tr><td>
+                    <p>An inline <span class="inlinemediaobject"><img src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/src/main/wikbook/images/smallcontroller.png"></span> image</p>
+                  </td></tr></tbody></table></div></div><br class="table-break"><p>Image display can be parameterized for all output but it is possible to target a specific output with a prefix. The <span class="italic">fo</span> prefix affects the PDF output and the <span class="italic">html</span> targets the HTML content. More details about docbook images parameterization can be found in the docbook <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.docbook.org/tdg/en/html/imagedata.html" target="_top">imagedata</a> reference.</p><div class="table"><a name="d0e714"></a><p class="title"><b>Table&nbsp;2.17.&nbsp;Image example</b></p><div class="table-contents"><table summary="Image example" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">[[image:images/controller.png||title="The controller" align="center" html:scale="50" fo:width="50mm]]</pre></div>
+                  </td></tr><tr><td>
+                    <p>
+                      </p><div class="figure"><a name="d0e732"></a><div class="figure-contents"><div class="mediaobject" align="center"><img src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/src/main/wikbook/images/controller.png" align="middle" alt="The controller"></div></div><p class="title"><b>Figure&nbsp;2.1.&nbsp;The controller</b></p></div><p><br class="figure-break">
+                    </p>
+                  </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e742"></a>2.2.3.6.&nbsp;Admonitions</h4></div></div></div><div class="table"><a name="d0e745"></a><p class="title"><b>Table&nbsp;2.18.&nbsp;Admonitions</b></p><div class="table-contents"><table summary="Admonitions" border="1"><colgroup><col><col><col></colgroup><tbody><tr><td>Note</td><td>{{note}}Some noticeable text{{/note}}</td><td>
+                    <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>some noticeable text</p></td></tr></table></div>
+                  </td></tr><tr><td>Warning</td><td>{{warning}}you should not do that{{/warning}}</td><td>
+                    <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/warning.png"></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>you should not do that</p></td></tr></table></div>
+                  </td></tr><tr><td>Tip</td><td>{{tip}}a usefull tip{{/tip}}</td><td>
+                    <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>a usefull tip</p></td></tr></table></div>
+                  </td></tr><tr><td>Caution</td><td>{{caution}}beware!!!{{/caution}}</td><td>
+                    <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Caution"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/caution.png"></td><th align="left">Caution</th></tr><tr><td align="left" valign="top"><p>beware!!!</p></td></tr></table></div>
+                  </td></tr><tr><td>Important</td><td>{{important}}something important{{/important}}</td><td>
+                    <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>something important</p></td></tr></table></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e805"></a>2.2.3.7.&nbsp;Special blocks</h4></div></div></div><p>A set of special blocks are available, they allow to give a special representation to the emboddied text.</p><p>The <span class="italic">code</span> macro creates a docbook programlisting XML element to display anything related to code. Special features are available that makes it very powerful</p><div class="itemizedlist"><ul type="disc"><li><p>XML code can be validated and pretty printed with a configuration indentation</p></li><li><p>External Java code can be embedded inside the document</p></li></ul></div><div class="table"><a name="d0e822"></a><p class="title"><b>Table&nbsp;2.19.&nbsp;A sample generic code</b></p><div class="table-contents"><table summary="A sample generic code" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">{{code}}x = x + 1;{{/code}}</pre></div>
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">x = x + 1;</pre></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"><div class="table"><a name="d0e843"></a><p class="title"><b>Table&nbsp;2.20.&nbsp;A sample Java code</b></p><div class="table-contents"><table summary="A sample Java code" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">{{code language=java}}x = x + 1;{{/code}}</pre></div>
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">x = x + 1;</pre></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"><div class="table"><a name="d0e864"></a><p class="title"><b>Table&nbsp;2.21.&nbsp;A sample XML code</b></p><div class="table-contents"><table summary="A sample XML code" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">{{code language=xml}}&lt;valid/&gt;{{/code}}</pre></div>
+                  </td></tr><tr><td>
+                    <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">valid</span>/&gt;</pre></div>
+                  </td></tr></tbody></table></div></div><br class="table-break"><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e885"></a>2.2.3.7.1.&nbsp;Java code</h5></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="d0e888"></a>2.2.3.7.1.1.&nbsp;Declaring a code section</h6></div></div></div><p>Code section can be declared with the generic <code class="code">code</code> macro with the language attribute set to <span class="italic">java</span>. To make it shorter, the <code class="code">java</code> macro can be used directly.</p><div class="table"><a name="d0e902"></a><p class="title"><b>Table&nbsp;2.22.&nbsp;Java code</b></p><div class="table-contents"><table summary="Java code" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{java}}x = x + 1;{{/java}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">x = x + 1;</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="java_code_citation_section"></a>2.2.3.7.1.2.&nbsp;Java code citation </h6></div></div></div><p>Wikbook has a special integration with Java project allowing to cite Java code inside the documentation from the existing source code. This feature requires the code source and binary to be available when Wikbook compiles the wikbook sources, the integration inside a Maven build is trivial and is covered in the <a href="#maven_code_citation_section" title="3.2.4.&nbsp;Integration of code block citation">Section&nbsp;3.2.4, &#8220;Integration of code block citation &#8221;</a>.</p><p>The syntax is taken from the Javadoc syntax that allows to create reference to code elements via the {@link ref} where ref is a reference to a code element such as a class, a method or a field.</p><div class="table"><a name="d0e932"></a><p class="title"><b>Table&nbsp;2.23.&nbsp;A class citation</b></p><div class="table-contents"><table summary="A class citation" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{code language=java}}{@include org.wikbook.doc.AnObject}{{/code}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting"><span class="hl-keyword">public</span> <span class="hl-keyword">class</span> AnObject
+{
+   <span class="hl-keyword">public</span> <span class="hl-keyword">void</span> foo()
+   {
+      String a1 = <span class="hl-string">"the first"</span>;
+      String b1 = <span class="hl-string">"block"</span>;
+      String c1 = <span class="hl-string">"of code"</span>;
+
+      String a2 = <span class="hl-string">"the second"</span>;
+      String b2 = <span class="hl-string">"block"</span>;
+      String c2 = <span class="hl-string">"of code"</span>;
+
+      String a3 = <span class="hl-string">"the third"</span>;
+      String b3 = <span class="hl-string">"block"</span>;
+      String c3 = <span class="hl-string">"of code"</span>;
+   }
+
+   <span class="hl-keyword">public</span> <span class="hl-keyword">void</span> foo(String s)
+   {
+      <span class="hl-comment">// An empty method</span>
+   }
+}</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"><p>Citing an whole class is often cumbersome and Wikbook gives the capability to cite class members, i.e methods or fields.</p><div class="table"><a name="d0e955"></a><p class="title"><b>Table&nbsp;2.24.&nbsp;A method citation</b></p><div class="table-contents"><table summary="A method citation" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{code language=java}}{@include org.wikbook.doc.AnObject#foo(java.lang.String)}{{/code}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">   <span class="hl-keyword">public</span> <span class="hl-keyword">void</span> foo(String s)
+   {
+      <span class="hl-comment">// An empty method</span>
+   }</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"><p>Going farther is even possible thanks to the code block citation feature. First let's define the notion of code block. A code block is a block of code inside a method that begins with a special comment like <code class="code">// -1-</code> and terminates with a blank line or the end of the method, the number indicating a reference that can be used within an include instruction:</p><p>
+                </p><div class="example"><a name="d0e983"></a><p class="title"><b>Example&nbsp;2.1.&nbsp;A code block</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">// -1-
+int a = 0;</pre></div></div></div><p><br class="example-break">
+              </p><p>Code blocks can be cited by adding a curly brace list of the blocks to cite inside an include instruction.</p><div class="table"><a name="d0e993"></a><p class="title"><b>Table&nbsp;2.25.&nbsp;A block code citation</b></p><div class="table-contents"><table summary="A block code citation" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{code language=java}}{@include org.wikbook.doc.AnObject#foo() {1}}{{/code}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">      String a1 = <span class="hl-string">"the first"</span>;
+      String b1 = <span class="hl-string">"block"</span>;
+      String c1 = <span class="hl-string">"of code"</span>;
+      String a3 = <span class="hl-string">"the third"</span>;
+      String b3 = <span class="hl-string">"block"</span>;
+      String c3 = <span class="hl-string">"of code"</span>;
+</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"><p>Code block citations can be combined</p><div class="table"><a name="d0e1016"></a><p class="title"><b>Table&nbsp;2.26.&nbsp;A block code citation</b></p><div class="table-contents"><table summary="A block code citation" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{code language=java}}{@include org.wikbook.doc.AnObject#foo() {1,2}}{{/code}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">      String a1 = <span class="hl-string">"the first"</span>;
+      String b1 = <span class="hl-string">"block"</span>;
+      String c1 = <span class="hl-string">"of code"</span>;
+      String a2 = <span class="hl-string">"the second"</span>;
+      String b2 = <span class="hl-string">"block"</span>;
+      String c2 = <span class="hl-string">"of code"</span>;
+      String a3 = <span class="hl-string">"the third"</span>;
+      String b3 = <span class="hl-string">"block"</span>;
+      String c3 = <span class="hl-string">"of code"</span>;
+</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"><p>Code block citation never cites the method declaration itself.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1039"></a>2.2.3.7.2.&nbsp;XML code</h5></div></div></div><p>Code section can be declared with the generic <code class="code">code</code> macro with the language attribute set to <span class="italic">xml</span>. To make it shorter the <code class="code">xml</code> macro can be used directly.</p><div class="section" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="d0e1053"></a>2.2.3.7.2.1.&nbsp;XML code reformat</h6></div></div></div><p>XML code is formatted when the <span class="italic">indent</span> macro attribute with a valid value.</p><div class="table"><a name="d0e1061"></a><p class="title"><b>Table&nbsp;2.27.&nbsp;XML pretty printed</b></p><div class="table-contents"><table summary="XML pretty printed" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{code language=xml indent=2}}
+&lt;bar&gt;&lt;bar&gt;bar&lt;/bar&gt;&lt;/bar&gt;&lt;bar&gt;&lt;bar&gt;bar&lt;/bar&gt;&lt;/bar&gt;
+{{/code}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">bar</span>&gt;
+  &lt;<span class="hl-tag">bar</span>&gt;bar&lt;<span class="hl-tag">/bar</span>&gt;
+&lt;<span class="hl-tag">/bar</span>&gt;
+&lt;<span class="hl-tag">bar</span>&gt;
+  &lt;<span class="hl-tag">bar</span>&gt;bar&lt;<span class="hl-tag">/bar</span>&gt;
+&lt;<span class="hl-tag">/bar</span>&gt;
+</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The XML can have any number of sibling elements and does not require to wrap the content with a root element.</p></td></tr></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="xml_code_inclusion_section"></a>2.2.3.7.2.2.&nbsp;XML inclusion </h6></div></div></div><p>Like Java code citation, Wikbook can also include XML documents. The same kind of integration is available with Maven explained in the <a href="#maven_code_citation_section" title="3.2.4.&nbsp;Integration of code block citation">Section&nbsp;3.2.4, &#8220;Integration of code block citation &#8221;</a>. The syntax uses a special implicitely declared namespace, mapped to the <code class="code">wikbook</code> prefix.</p><div class="table"><a name="d0e1095"></a><p class="title"><b>Table&nbsp;2.28.&nbsp;XML inclusion</b></p><div class="table-contents"><table summary="XML inclusion" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{xml}}&lt;wikbook:include href="document.xml"/&gt;{{/xml}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">foo</span>&gt;
+  &lt;<span class="hl-tag">bar</span>/&gt;
+&lt;<span class="hl-tag">/foo</span>&gt;</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"><p>The inclusion can be combined with an xpath attribute to select a fragment of the included document.</p><div class="table"><a name="d0e1118"></a><p class="title"><b>Table&nbsp;2.29.&nbsp;XML inclusion</b></p><div class="table-contents"><table summary="XML inclusion" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">{{xml}}&lt;wikbook:include href="document.xml" xpath="//bar"/&gt;{{/xml}}</pre></div>
+                      </td></tr><tr><td>
+                        <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">bar</span>/&gt;</pre></div>
+                      </td></tr></tbody></table></div></div><br class="table-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Originally the xinclude mechanism was chosen but the weak support of xpointer precluded its usage and instead we decided to introduce a custom wikbook inclusion mechanism</p></td></tr></table></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1142"></a>2.2.3.7.3.&nbsp;Screen output</h5></div></div></div><p>The <span class="italic">screen</span> macro creates a docbook screen XML element to display anything related to the computer screen:</p><div class="table"><a name="d0e1150"></a><p class="title"><b>Table&nbsp;2.30.&nbsp;A screen example</b></p><div class="table-contents"><table summary="A screen example" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                      <div class="programlistingco"><pre class="programlisting">{{screen}}
+julien:core julien$ ls -l
+total 24
+-rw-r--r--  1 julien  staff  1878 Apr 26 15:08 pom.xml
+drwxr-xr-x  5 julien  staff   170 Apr 26 15:08 src
+drwxr-xr-x  5 julien  staff   170 Apr 26 18:46 target
+-rw-r--r--  1 julien  staff  4090 Apr 26 15:09 wikbook.core.iml
+{{/screen}}</pre></div>
+                    </td></tr><tr><td>
+                      <pre class="screen">julien:core julien$ ls -l
+total 24
+-rw-r--r--  1 julien  staff  1878 Apr 26 15:08 pom.xml
+drwxr-xr-x  5 julien  staff   170 Apr 26 15:08 src
+drwxr-xr-x  5 julien  staff   170 Apr 26 18:46 target
+-rw-r--r--  1 julien  staff  4090 Apr 26 15:09 wikbook.core.iml</pre>
+                    </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1169"></a>2.2.3.7.4.&nbsp;Callouts</h5></div></div></div><p>Callouts are useful for creating a set of references that refers to the code source. At the moment they are only available for Java<sup>tm</sup> language. A callout is declared inside a code block using comments in special format.</p><div class="table"><a name="d0e1177"></a><p class="title"><b>Table&nbsp;2.31.&nbsp;A simple callout</b></p><div class="table-contents"><table summary="A simple callout" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                      <div class="programlistingco"><pre class="programlisting">{{code language=java}}public void foo()
+{
+   System.out.println("This is going to the output"); // &lt;1&gt; A callout
+}
+{{/code}}</pre></div>
+                    </td></tr><tr><td>
+                      <div class="programlistingco"><pre class="programlisting"><span class="hl-keyword">public</span> <span class="hl-keyword">void</span> foo()
+{
+   System.out.println(<span class="hl-string">"This is going to the output"</span>); <span class="co"><img src="images/callouts/1.png" alt="(1)"></span> 
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/callouts/1.png" alt="1" border="0"></td><td valign="top" align="left"><p>A callout</p></td></tr></table></div></div>
+                    </td></tr></tbody></table></div></div><br class="table-break"><p>The syntax use angle brackets like <span class="bold"><strong> &lt;1&gt; </strong></span> to define a callout because visually it is very similar to a callout bug. The value inside the brackets must be a number or it can be empty. The callout list will use this numbering to sort the callouts.</p><p>Most of the time it is not necessary to declare a number and the callout index can be empty. In that case, it uses a number that is greater than the previous index and lower than the next one. Eventually it is possible to use only empty callout, it is displayed in the definition order.</p><div class="table"><a name="d0e1210"></a><p class="title"><b>Table&nbsp;2.32.&nbsp;Anonymous callouts</b></p><div class="table-contents"><table summary="Anonymous callouts" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                      <div class="programlistingco"><pre class="programlisting">{{code language=java}}public void foo()
+{
+   System.out.println("This is going to the output"); // &lt;&gt; Callout 2
+   System.out.println("This is going to the output"); // &lt;&gt; Callout 3
+   System.out.println("This is going to the output"); // &lt;2&gt; Callout 4
+   System.out.println("This is going to the output"); // &lt;1&gt; Callout 1
+}
+{{/code}}</pre></div>
+                    </td></tr><tr><td>
+                      <div class="programlistingco"><pre class="programlisting"><span class="hl-keyword">public</span> <span class="hl-keyword">void</span> foo()
+{
+   System.out.println(<span class="hl-string">"This is going to the output"</span>); <span class="co"><img src="images/callouts/1.png" alt="(1)"></span> 
+   System.out.println(<span class="hl-string">"This is going to the output"</span>); <span class="co"><img src="images/callouts/2.png" alt="(2)"></span> 
+   System.out.println(<span class="hl-string">"This is going to the output"</span>); <span class="co"><img src="images/callouts/4.png" alt="(4)"></span> 
+   System.out.println(<span class="hl-string">"This is going to the output"</span>); <span class="co"><img src="images/callouts/3.png" alt="(3)"></span> 
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/callouts/1.png" alt="1" border="0"></td><td valign="top" align="left"><p>Callout 1</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/2.png" alt="2" border="0"></td><td valign="top" align="left"><p>Callout 2</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/3.png" alt="3" border="0"></td><td valign="top" align="left"><p>Callout 3</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/4.png" alt="4" border="0"></td><td valign="top" align="left"><p>Callout 4</p></td></tr></table></div></div>
+                    </td></tr></tbody></table></div></div><br class="table-break"><p>Callout anchor don't have to be mixed inside the text, a simple declaration without any text will just create an anchor. Somewhere else in the code block, the callout text can be declared by adding an equal sign between the right angle bracket and the text. As a consequence, several lines can be referenced with the same callout.</p><div class="table"><a name="d0e1250"></a><p class="title"><b>Table&nbsp;2.33.&nbsp;A callout anchor and its text</b></p><div class="table-contents"><table summary="A callout anchor and its text" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                      <div class="programlistingco"><pre class="programlisting">{{code language=java}}public void foo()
+{
+   int a = 0; // &lt;1&gt;
+   int b = 0; // &lt;1&gt;
+}
+// =1= An assignment
+{{/code}}</pre></div>
+                    </td></tr><tr><td>
+                      <div class="programlistingco"><pre class="programlisting"><span class="hl-keyword">public</span> <span class="hl-keyword">void</span> foo()
+{
+   <span class="hl-keyword">int</span> a = 0; <span class="co"><img src="images/callouts/1.png" alt="(1)"></span> 
+   <span class="hl-keyword">int</span> b = 0; <span class="co"><img src="images/callouts/2.png" alt="(2)"></span> 
+}
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/callouts/1.png" alt="1" border="0"><img src="images/callouts/2.png" alt="2" border="0"></td><td valign="top" align="left"><p>An assignment</p></td></tr></table></div></div>
+                    </td></tr></tbody></table></div></div><br class="table-break"></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1277"></a>2.2.4.&nbsp;Definition list</h3></div></div></div><p>Wiki definition lists are managed as docbook variable lists.</p><div class="table"><a name="d0e1282"></a><p class="title"><b>Table&nbsp;2.34.&nbsp;Definition lists</b></p><div class="table-contents"><table summary="Definition lists" border="1"><colgroup><col><col><col></colgroup><tbody><tr><td>
+                  <div class="programlistingco"><pre class="programlisting">; term
+: definition</pre></div>
+                </td><td>
+                  <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">variablelist</span>&gt;
+  &lt;<span class="hl-tag">varlistentry</span>&gt;
+    &lt;<span class="hl-tag">term</span>&gt;term&lt;<span class="hl-tag">/term</span>&gt;
+    &lt;<span class="hl-tag">listitem</span>&gt;
+      &lt;<span class="hl-tag">para</span>&gt;definition&lt;<span class="hl-tag">/para</span>&gt;
+    &lt;<span class="hl-tag">/listitem</span>&gt;
+  &lt;<span class="hl-tag">/varlistentry</span>&gt;
+&lt;<span class="hl-tag">/variablelist</span>&gt;
+</pre></div>
+                </td><td>
+                  <div class="variablelist"><dl><dt><span class="term">term</span></dt><dd><p>definition</p></dd></dl></div>
+                </td></tr><tr><td>
+                  <div class="programlistingco"><pre class="programlisting">(% title="the title" %)
+; term
+: definition</pre></div>
+                </td><td>
+                  <div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">variablelist</span>&gt;
+  &lt;<span class="hl-tag">title</span>&gt;the title&lt;<span class="hl-tag">/title</span>&gt;
+  &lt;<span class="hl-tag">varlistentry</span>&gt;
+    &lt;<span class="hl-tag">term</span>&gt;term&lt;<span class="hl-tag">/term</span>&gt;
+    &lt;<span class="hl-tag">listitem</span>&gt;
+      &lt;<span class="hl-tag">para</span>&gt;definition&lt;<span class="hl-tag">/para</span>&gt;
+    &lt;<span class="hl-tag">/listitem</span>&gt;
+  &lt;<span class="hl-tag">/varlistentry</span>&gt;
+&lt;<span class="hl-tag">/variablelist</span>&gt;
+</pre></div>
+                </td><td>
+                  <div class="variablelist"><p class="title"><b>the title</b></p><dl><dt><span class="term">term</span></dt><dd><p>definition</p></dd></dl></div>
+                </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1339"></a>2.2.5.&nbsp;Example</h3></div></div></div><p>Docbook defines a tag for creating examples. It gives the capability to give the example a title. Most importantly it generates a list of all examples in the book.</p><div class="table"><a name="d0e1344"></a><p class="title"><b>Table&nbsp;2.35.&nbsp;An example</b></p><div class="table-contents"><table summary="An example" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                  <div class="programlistingco"><pre class="programlisting">{{example}}an example{{/example}}</pre></div>
+                </td><td>
+                  <p>
+                    </p><div class="example"><a name="d0e1361"></a><p class="title"><b>Example&nbsp;2.2.&nbsp;</b></p><div class="example-contents"><p>an example</p></div></div><p><br class="example-break">
+                  </p>
+                </td></tr><tr><td>
+                  <div class="programlistingco"><pre class="programlisting">{{example title="my example"}}an example with a title{{/example}}</pre></div>
+                </td><td>
+                  <p>
+                    </p><div class="example"><a name="d0e1378"></a><p class="title"><b>Example&nbsp;2.3.&nbsp;</b></p><div class="example-contents"><p>an example with a title</p></div></div><p><br class="example-break">
+                  </p>
+                </td></tr></tbody></table></div></div><br class="table-break"><p>The example macro can easily be combined, for instance a code example can be created by combining the example and code macros.</p><div class="table"><a name="d0e1385"></a><p class="title"><b>Table&nbsp;2.36.&nbsp;A code example combining the example and code macros</b></p><div class="table-contents"><table summary="A code example combining the example and code macros" border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                  <div class="programlistingco"><pre class="programlisting">{{example title="increment x"}}{{code}}x = x + 1;{{/code}}{{/example}}</pre></div>
+                </td><td>
+                  <p>
+                    </p><div class="example"><a name="d0e1402"></a><p class="title"><b>Example&nbsp;2.4.&nbsp;increment x</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">x = x + 1;</pre></div></div></div><p><br class="example-break">
+                  </p>
+                </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1411"></a>2.2.6.&nbsp;Quotation</h3></div></div></div><p>Quotation generates a set of DocBook blockquote structure. </p><div class="table"><a name="d0e1416"></a><p class="title"><b>Table&nbsp;2.37.&nbsp;Quotation</b></p><div class="table-contents"><table summary="Quotation" border="1"><colgroup><col></colgroup><tbody><tr><td>
+                  <div class="programlistingco"><pre class="programlisting">&gt;John said this
+&gt;&gt;Marie answered that
+I said ok</pre></div>
+                </td></tr><tr><td>
+                  <div class="blockquote"><blockquote class="blockquote"><p>John said this</p><div class="blockquote"><blockquote class="blockquote"><p>Marie said that</p></blockquote></div></blockquote></div>
+                  <p>I said ok</p>
+                </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1442"></a>2.2.7.&nbsp;Modularization</h3></div></div></div><p>The <span class="italic">include</span> macro is a good way to provide modularization of a complex document.</p><p>
+          </p><div class="example"><a name="d0e1452"></a><p class="title"><b>Example&nbsp;2.5.&nbsp;Document embedding</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">{{include document="embedded.wiki" /}}</pre></div></div></div><p><br class="example-break">
+        </p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="/Volumes/Main/Users/julien/java/tmp/wikbook/tags/0.9.26/doc/target/wikbook/src/resources/images/admons/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>Embedding does a special treatment to sections: when a document is embedded, its section are reconsidered with respect to the most inner section embedding the document.</p></td></tr></table></div></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e1463"></a>Chapter&nbsp;3.&nbsp;Project integration</h2></div></div></div><p>This chapter focuses on the integration of the documentation with the project it documents.</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1468"></a>3.1.&nbsp;Java<sup>tm</sup> code embedding</h2></div></div></div><p>Wikbook allows to embbed Java<sup>tm</sup> source code inside the documentation. It is very powerful when it comes to explain a tutorial or to explain an API.</p><p>todo</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1481"></a>3.2.&nbsp;Maven integration</h2></div></div></div><p>The Maven Wikbook plugin converts wiki document to a Docbook document. In order to produce final consumable documents (PDF, HTML), the Docbook document must be converted to new documents, this process is usually done via an XSL stylesheet that takes the Docbook document and transforms it.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1486"></a>3.2.1.&nbsp;The Maven Wikbook plugin</h3></div></div></div><p>The Maven Wikbook plugin focus on transforming the Wiki content into a compliant DocBook XML document.</p><p>
+          </p><div class="example"><a name="d0e1493"></a><p class="title"><b>Example&nbsp;3.1.&nbsp;Example of Wikbook Maven plugin</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">plugin</span>&gt;
+  &lt;<span class="hl-tag">groupId</span>&gt;org.wikbook&lt;<span class="hl-tag">/groupId</span>&gt;
+  &lt;<span class="hl-tag">artifactId</span>&gt;wikbook.maven&lt;<span class="hl-tag">/artifactId</span>&gt;
+  &lt;<span class="hl-tag">executions</span>&gt;
+    &lt;<span class="hl-tag">execution</span>&gt;
+      &lt;<span class="hl-tag">phase</span>&gt;prepare-package&lt;<span class="hl-tag">/phase</span>&gt;
+      &lt;<span class="hl-tag">goals</span>&gt;
+        &lt;<span class="hl-tag">goal</span>&gt;transform&lt;<span class="hl-tag">/goal</span>&gt;
+      &lt;<span class="hl-tag">/goals</span>&gt;
+    &lt;<span class="hl-tag">/execution</span>&gt;
+  &lt;<span class="hl-tag">/executions</span>&gt;
+  &lt;<span class="hl-tag">configuration</span>&gt;
+    &lt;<span class="hl-tag">sourceDirectory</span>&gt;${pom.basedir}/src/main/wikbook/en/en-US&lt;<span class="hl-tag">/sourceDirectory</span>&gt;
+    &lt;<span class="hl-tag">sourceFileName</span>&gt;book.wiki&lt;<span class="hl-tag">/sourceFileName</span>&gt;
+    &lt;<span class="hl-tag">destinationDirectory</span>&gt;${project.build.directory}/wikbook/src&lt;<span class="hl-tag">/destinationDirectory</span>&gt;
+    &lt;<span class="hl-tag">destinationFileName</span>&gt;index.xml&lt;<span class="hl-tag">/destinationFileName</span>&gt;
+    &lt;<span class="hl-tag">emitDoctype</span>&gt;false&lt;<span class="hl-tag">/emitDoctype</span>&gt;
+  &lt;<span class="hl-tag">/configuration</span>&gt;
+&lt;<span class="hl-tag">/plugin</span>&gt;
+</pre></div></div></div><p><br class="example-break">
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1501"></a>3.2.2.&nbsp;The Maven transformation plugins</h3></div></div></div><p>A transformation plugin plays an important role in the documentation generation because it takes the docbook generated  by wikbook and transforms it into the real documentation. There are at least two plugins that provides this functionnality:</p><div class="itemizedlist"><ul type="disc"><li><p>The <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://code.google.com/p/docbkx-tools/" target="_top">Docbkx Tools</a> project: it contains a plugin that is actually used by the Wikbook archetype.</p></li><li><p>The <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/maven-jdocbook-plugin/" target="_top">Maven jDocBook Plugin</a> project.</p></li></ul></div><p>Configuration of these plugins is not covered in this guide, however each of them contain a fairly good documentation, both are comparable in term of feature and can generate the main formats like HTML or PDF.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1521"></a>3.2.3.&nbsp;The Maven Wikbook archetype</h3></div></div></div><p>The Wikbook archetype creates a Wikbook module that contains a basic documentation and its POM contains the plugin configuration to generate HTML and PDF formats. Its usage is very simple:</p><p>
+          </p><div class="example"><a name="d0e1528"></a><p class="title"><b>Example&nbsp;3.2.&nbsp;Wikbook archetype usage</b></p><div class="example-contents"><pre class="screen">&gt;mvn archetype:generate \
+  -DarchetypeGroupId=org.wikbook \
+  -DarchetypeArtifactId=wikbook.archetype \
+  -DarchetypeVersion=0.9.26 \
+  -DgroupId=&lt;my.groupid&gt; \
+  -DartifactId=&lt;my-artifactId&gt;</pre></div></div><p><br class="example-break">
+        </p><p>After that, it is ready to be used and tweaked.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="maven_code_citation_section"></a>3.2.4.&nbsp;Integration of code block citation </h3></div></div></div><p>We have covered how code can be cited in the <a href="#java_code_citation_section" title="2.2.3.7.1.2.&nbsp;Java code citation">Section&nbsp;2.2.3.7.1.2, &#8220;Java code citation &#8221;</a> and the <a href="#xml_code_inclusion_section" title="2.2.3.7.2.2.&nbsp;XML inclusion">Section&nbsp;2.2.3.7.2.2, &#8220;XML inclusion &#8221;</a>. Inside a Maven project, the Wikbook plugin requires access to the dependencies containing the code, source and binaries.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1545"></a>3.2.4.1.&nbsp;Producing the source dependencies</h4></div></div></div><p>By default Maven does not create source code artifacts, however the <span class="italic">maven-source-plugin</span> does. Here is an example of the plugin configuration that can be added to a project to activate the generation of the source code artifact along with the compiled code artifact:</p><p>
+            </p><div class="example"><a name="d0e1555"></a><p class="title"><b>Example&nbsp;3.3.&nbsp;Configuration of the maven-source-plugin</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-tag">plugin</span>&gt;
+  &lt;<span class="hl-tag">groupId</span>&gt;org.apache.maven.plugins&lt;<span class="hl-tag">/groupId</span>&gt;
+  &lt;<span class="hl-tag">artifactId</span>&gt;maven-source-plugin&lt;<span class="hl-tag">/artifactId</span>&gt;
+  &lt;<span class="hl-tag">executions</span>&gt;
+    &lt;<span class="hl-tag">execution</span>&gt;
+      &lt;<span class="hl-tag">id</span>&gt;attach-sources&lt;<span class="hl-tag">/id</span>&gt;
+      &lt;<span class="hl-tag">goals</span>&gt;
+        &lt;<span class="hl-tag">goal</span>&gt;jar-no-fork&lt;<span class="hl-tag">/goal</span>&gt;
+      &lt;<span class="hl-tag">/goals</span>&gt;
+    &lt;<span class="hl-tag">/execution</span>&gt;
+  &lt;<span class="hl-tag">/executions</span>&gt;
+&lt;<span class="hl-tag">/plugin</span>&gt;
+</pre></div></div></div><p><br class="example-break">
+          </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1563"></a>3.2.4.2.&nbsp;Declaring the right dependency</h4></div></div></div><p>The source code artifact needs to be declared as a dependency of the Maven module processing the Wikbook document:</p><p>
+            </p><div class="example"><a name="d0e1570"></a><p class="title"><b>Example&nbsp;3.4.&nbsp;Declaring the right dependency</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">&lt;<span class="hl-comment">!-- Declares a dependency on the code --</span>&gt;
+&lt;<span class="hl-tag">dependency</span>&gt;
+  &lt;<span class="hl-tag">groupId</span>&gt;groupId&lt;<span class="hl-tag">/groupId</span>&gt;
+  &lt;<span class="hl-tag">artifactId</span>&gt;artifactId&lt;<span class="hl-tag">/artifactId</span>&gt;
+  &lt;<span class="hl-tag">version</span>&gt;1.0-SNAPSHOT&lt;<span class="hl-tag">/version</span>&gt;
+&lt;<span class="hl-tag">/dependency</span>&gt;
+&lt;<span class="hl-comment">!-- Declares a dependency on the source code --</span>&gt;
+&lt;<span class="hl-tag">dependency</span>&gt;
+  &lt;<span class="hl-tag">groupId</span>&gt;groupId&lt;<span class="hl-tag">/groupId</span>&gt;
+  &lt;<span class="hl-tag">artifactId</span>&gt;artifactId&lt;<span class="hl-tag">/artifactId</span>&gt;
+  &lt;<span class="hl-tag">version</span>&gt;1.0-SNAPSHOT&lt;<span class="hl-tag">/version</span>&gt;
+  &lt;<span class="hl-tag">classifier</span>&gt;sources&lt;<span class="hl-tag">/classifier</span>&gt;
+&lt;<span class="hl-tag">/dependency</span>&gt;
+</pre></div></div></div><p><br class="example-break">
+          </p></div></div></div></div></div></body></html>
