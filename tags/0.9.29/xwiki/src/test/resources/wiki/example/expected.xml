@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book>
+  <preface>
+    <title>Preface</title>
+    <para>
+      <informalexample>
+        <itemizedlist>
+          <listitem>
+            <para>a</para>
+          </listitem>
+          <listitem>
+            <para>b</para>
+          </listitem>
+        </itemizedlist>
+      </informalexample>
+      <example>
+        <title>the title</title>
+        <itemizedlist>
+          <listitem>
+            <para>a</para>
+          </listitem>
+          <listitem>
+            <para>b</para>
+          </listitem>
+        </itemizedlist>
+      </example>
+    </para>
+  </preface>
+</book>

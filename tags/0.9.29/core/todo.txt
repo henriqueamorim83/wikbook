@@ -1,0 +1,31 @@
+- define semantic for detecting when an image must be inlined or not
+- use xwiki synthetic ID when no anchor is provided in header
+- on the fly SVG rasterization
+- code line wrapping for XML and Java
+- table cell alignement
+- make a cheatsheet
+
+Investigate this tip about line wrapping in code:
+
+"Si ça peut aider quelqu'un d'autre, j'ai trouvé une solution à mon problème.
+ J'ai changé un attribut dans la feuille de style qui contient les paramètres
+ pour le fo :
+ <xsl:attribute-set name="monospace.verbatim.properties"
+ use-attribute-sets="verbatim.properties monospace.properties">
+ <xsl:attribute name="text-align">start</xsl:attribute>
+ <xsl:attribute name="wrap-option">wrap</xsl:attribute>
+ </xsl:attribute-set>"
+
+
+Resources:
+- http://platform.xwiki.org/xwiki/bin/view/Features/Annotations
+- http://code.xwiki.org/xwiki/bin/view/Macros/IdMacro
+- http://code.xwiki.org/xwiki/bin/view/Macros/SnippetMacro
+- http://platform.xwiki.org/xwiki/bin/view/Main/XWikiSyntax
+- http://infohost.nmt.edu/tcc/help/pubs/docbref/docbref.pdf
+- http://platform.xwiki.org/xwiki/bin/view/Main/XWikiSyntax
+- http://code.xwiki.org/xwiki/bin/view/Modules/RenderingModule
+- http://svn.xwiki.org/svnroot/xwiki/platform/core/trunk/xwiki-rendering/xwiki-rendering-tests/src/test/resources/
+
+Stylesheet:
+- http://code.google.com/p/asciidoc/
