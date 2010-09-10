@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book>
+  <preface>
+    <title>Preface</title>
+    <orderedlist>
+      <listitem>
+        <para>a</para>
+        <orderedlist>
+          <listitem>
+            <para>b</para>
+            <orderedlist>
+              <listitem>
+                <para>c</para>
+              </listitem>
+            </orderedlist>
+          </listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para>d</para>
+      </listitem>
+    </orderedlist>
+  </preface>
+</book>

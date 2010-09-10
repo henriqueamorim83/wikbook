@@ -1,0 +1,29 @@
+<bookinfo>
+  <title>Wikbook</title>
+  <subtitle>Wikbook Reference Guide</subtitle>
+  <edition>1.0</edition>
+  <pubsnumber>1</pubsnumber>
+  <productname>Wikbook</productname>
+  <productnumber>1.0</productnumber>
+  <copyright>
+    <year>2010</year>
+    <holder>eXo Platform SAS</holder>
+  </copyright>
+  <authorgroup>
+    <author>
+      <firstname>Julien</firstname>
+      <surname>Viet</surname>
+      <affiliation>
+        <shortaffil>eXo Platform</shortaffil>
+      </affiliation>
+    </author>
+  </authorgroup>
+  <mediaobject>
+    <imageobject role="fo">
+      <imagedata align="center" fileref="images/controller.png" format="PNG" width="50mm"/>
+    </imageobject>
+    <imageobject role="html">
+      <imagedata align="center" fileref="images/controller.png" format="PNG" scale="50"/>
+    </imageobject>
+  </mediaobject>
+</bookinfo>
