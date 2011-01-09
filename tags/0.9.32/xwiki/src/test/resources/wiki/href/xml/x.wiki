@@ -1,1 +1,0 @@
-{{code language="xml" href="wiki/href/xml/input.xml"/}}

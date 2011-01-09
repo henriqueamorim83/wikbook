@@ -1,1 +1,0 @@
-{{code language="groovy" href="wiki/href/groovy/A.groovy"/}}

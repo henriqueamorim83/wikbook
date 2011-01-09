@@ -1,9 +1,0 @@
-{example}
-* a
-* b
-{example}
-
-{example:title=the title}
-* a
-* b
-{example}

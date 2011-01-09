@@ -1,1 +1,0 @@
-{include:document=fragment.wiki|syntax=verbatim}

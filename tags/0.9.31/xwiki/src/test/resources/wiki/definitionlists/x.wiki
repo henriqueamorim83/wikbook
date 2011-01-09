@@ -1,6 +1,0 @@
-; term
-: definition
-
-(% title="the title" %)
-; term
-: definition

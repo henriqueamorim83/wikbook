@@ -1,5 +1,0 @@
-h1. foo
-foo content
-h2. bar
-bar content
-
